@@ -4,6 +4,7 @@ on:
     paths:
       - dalai/**
       - .github/workflows/build.yml
+      - docker-bake.hcl
 
 jobs:
   build-and-push:
