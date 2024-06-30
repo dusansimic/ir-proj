@@ -11,7 +11,7 @@ group "default" {
 }
 
 target "backend" {
-  context = "./dalai/"
-  dockerfile = "./dalai/Dockerfile"
+  context = "dalai/"
+  dockerfile = "Dockerfile"
   tags = ["${IMAGE_REGISTRY}/${IMAGE_REPOSITORY}/dalai:latest"]
 }
