@@ -33,6 +33,18 @@ sequenceDiagram
     server->>-user: Confirmation
 ```
 
+## Running server
+
+To run the API server, just run the following command. To see which versions of packages are
+expected, check out the Conda [environment.yml](./dalai/environment.yml).
+
+```sh
+python -m flask --app dalai/main.py run --no-debugger --no-reload
+```
+
+Another option is to use VSCode debugging tool and run the server with `debug: flask server`
+launcher.
+
 ## To use API
 
 To test the API for the web application, you can use [Bruno](https://www.usebruno.com/) as a simple,
