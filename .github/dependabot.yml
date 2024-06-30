@@ -10,3 +10,10 @@ updates:
    directory: "/"
    schedule:
      interval: weekly
+ - package-ecosystem: "docker"
+   directories:
+    - dalai
+   schedule:
+     interval: weekly
+   assignees:
+    - dusansimic
