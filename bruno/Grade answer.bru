@@ -1,0 +1,19 @@
+meta {
+  name: Grade answer
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:5000/grade-answer
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 0,
+    "question_index": 0,
+    "answer": "my answer"
+  }
+}

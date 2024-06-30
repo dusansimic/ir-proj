@@ -1,0 +1,18 @@
+meta {
+  name: Set paragraph
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:5000/set-paragraph
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 0,
+    "paragraph": "para para paragraph"
+  }
+}
