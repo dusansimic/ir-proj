@@ -1,0 +1,19 @@
+{
+	"name": "Miniconda (Python 3)",
+	"build": { 
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.debugpy",
+				"KevinRose.vsc-python-indent",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"donjayamanne.python-environment-manager",
+				"ms-python.vscode-pylance"
+			]
+		}
+	}
+}
