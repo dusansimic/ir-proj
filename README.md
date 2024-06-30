@@ -33,6 +33,11 @@ sequenceDiagram
     server->>-user: Confirmation
 ```
 
+## To use API
+
+To test the API for the web application, you can use [Bruno](https://www.usebruno.com/) as a simple,
+Postman-like API testing tool. The Bruno collection is located in the [bruno/](./bruno/) directory.
+
 ## Authors
 
 - Dušan Simić <dusan.simic@dmi.uns.ac.rs>
