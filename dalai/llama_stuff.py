@@ -26,9 +26,9 @@ class LlamaPrompter:
             repeat_penalty=1.2,
             top_k=150,
             echo=True)
-        
+
         return response
-    
+
 class LlamaParser:
     def __init__(self, parse_function):
         self.parse_function = parse_function
@@ -84,7 +84,7 @@ ASSISTANT:
         raw_output = self.prompter_grader.prompt_model(prompt)
         # print(raw_output['choices'][0]['text'])
         grading_result = self.parser_grades.parse_output(raw_output['choices'][0]['text'])
-        
+
         return grading_result
 
     @staticmethod
@@ -100,5 +100,3 @@ ASSISTANT:
 
     def get_results(self):
         return self.questions, self.answers
-    
-    
