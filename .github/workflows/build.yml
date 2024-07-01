@@ -3,6 +3,7 @@ on:
     branches: main
     paths:
       - dalai/**
+      - front/**
       - .github/workflows/build.yml
       - docker-bake.hcl
 
