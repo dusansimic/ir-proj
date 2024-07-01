@@ -7,11 +7,17 @@ variable "IMAGE_REPOSITORY" {
 }
 
 group "default" {
-  targets = ["backend"]
+  targets = ["backend", "frontend"]
 }
 
 target "backend" {
   context = "dalai/"
   dockerfile = "Dockerfile"
   tags = ["${IMAGE_REGISTRY}/${IMAGE_REPOSITORY}/dalai:latest"]
+}
+
+target "frontend" {
+  context = "front/"
+  dockerfile = "Dockerfile"
+  tags = ["${IMAGE_REGISTRY}/${IMAGE_REPOSITORY}/front:latest"]
 }
