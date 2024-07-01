@@ -18,6 +18,6 @@ RUN mkdir html
 WORKDIR /
 
 COPY ./nginx/nginx.conf /etc/nginx
-COPY --from=build /app/client/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
