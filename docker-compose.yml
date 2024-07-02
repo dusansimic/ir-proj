@@ -1,0 +1,18 @@
+services:
+  dalai:
+    image: ghcr.io/dusansimic/ir-proj/dalai:latest
+    ports:
+      - 5000:5000
+    networks:
+      - ailearner
+  web:
+    image: ghcr.io/dusansimic/ir-proj/front:latest
+    ports:
+      - 8080:80
+    networks:
+      - ailearner
+    depends_on:
+      - dalai
+
+networks:
+  ailearner:

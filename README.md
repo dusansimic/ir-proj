@@ -1,4 +1,4 @@
-# Information Retrieval
+# AIlearner
 
 > A humble learning assistant made with LLAMA.
 
@@ -31,6 +31,20 @@ sequenceDiagram
     server->>model: Close session
     model->>-server: Confirmation
     server->>-user: Confirmation
+```
+
+## Deploy the app
+
+To quickly and simply deploy the app, you can use Docker Compose.
+
+```sh
+docker compose up
+```
+
+To start running it in the background, you can use the `-d` options (for detach).
+
+```sh
+docker compose up -d
 ```
 
 ## Running server
@@ -69,6 +83,27 @@ And then stop it by entnering it's name in the stop command.
 
 ```sh
 docker stop <container name>
+```
+
+## Development
+
+To work on the backend, you can use the same command for running the server (explained above) or
+through VSCode run the `debug: flask server` launcher.
+
+For the web app, you'll need Node.js (version 22) was used during development. Since the web app is
+located in the front directory, you'll need to change your current directory to it before taking any
+other steps.
+
+To test the app you can run the development server with the `dev` npm script.
+
+```sh
+npm run dev
+```
+
+When you would like to build the app, simply run the `build` npm script.
+
+```sh
+npm run build
 ```
 
 ## To use API
