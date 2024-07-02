@@ -4,9 +4,9 @@ import json
 from session_store import SessionStore
 from util import Res
 
-# from llama_stuff import LlamaSession
+from llama_stuff import LlamaSession
 
-from mock.llama_stuff import LlamaSession
+# from mock.llama_stuff import LlamaSession
 
 app = Flask(__name__)
 CORS(app)
