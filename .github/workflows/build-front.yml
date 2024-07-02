@@ -6,6 +6,7 @@ on:
       - .github/workflows/build-front.yml
       - .github/workflows/reusable-build.yml
       - docker-bake.hcl
+  workflow_dispatch:
 
 jobs:
   build-and-push:
