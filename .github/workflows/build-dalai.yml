@@ -1,0 +1,15 @@
+on:
+  push:
+    branches: main
+    paths:
+      - dalai/**
+      - .github/workflows/build-dalai.yml
+      - .github/workflows/reusable-build.yml
+      - docker-bake.hcl
+
+jobs:
+  build-and-push:
+    secrets: inherit
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      target: backend

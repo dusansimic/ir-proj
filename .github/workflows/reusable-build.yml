@@ -1,11 +1,10 @@
 on:
-  push:
-    branches: main
-    paths:
-      - dalai/**
-      - front/**
-      - .github/workflows/build.yml
-      - docker-bake.hcl
+  workflow_call:
+    inputs:
+      target:
+        description: Docker Bake build target
+        required: true
+        type: string
 
 jobs:
   build-and-push:
@@ -26,3 +25,4 @@ jobs:
         uses: docker/bake-action@v5
         with:
           push: true
+          target: ${{ inputs.target }}
