@@ -19,5 +19,3 @@ WORKDIR /
 
 COPY ./nginx/nginx.conf /etc/nginx
 COPY --from=build /app/dist /usr/share/nginx/html
-
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
