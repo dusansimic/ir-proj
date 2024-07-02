@@ -2,7 +2,7 @@ on:
   push:
     paths:
       - dalai/**.py
-      - .github/workflows/test.yml
+      - .github/workflows/test-dalai.yml
   pull_request:
     paths:
       - dalai/**.py

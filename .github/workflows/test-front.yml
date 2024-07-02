@@ -1,0 +1,21 @@
+on:
+  push:
+    paths:
+      - front/**
+      - .github/workflows/test-front.yml
+  pull_request:
+    paths:
+      - front/**
+      - .github/workflows/test-front.yml
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
