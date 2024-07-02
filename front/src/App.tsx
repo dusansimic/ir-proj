@@ -29,6 +29,7 @@ export default function App() {
       const resp = await sdk.getSession(sessionId);
       if (resp.ok) {
         const json = await resp.json<GetSessionResponse>();
+        console.log(json);
         setSession(json);
         setMessages((messages) => [
           ...messages,
