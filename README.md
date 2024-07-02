@@ -45,6 +45,32 @@ python -m flask --app dalai/main.py run --no-debugger --no-reload
 Another option is to use VSCode debugging tool and run the server with `debug: flask server`
 launcher.
 
+## Running the web app
+
+First pull latest image from GitHub container registry.
+
+```sh
+docker pull ghcr.io/dusansimic/ir-proj/front:latest
+```
+Then start the container with the following command. It will start the container in background with
+an option to automatically remove it once it stops. It will start the web app on port 8080.
+
+```sh
+docker run --rm -d -p 8080:80 ghcr.io/dusansimic/ir-proj/front:latest
+```
+
+To stop the container first find the container name.
+
+```sh
+docker ps
+```
+
+And then stop it by entnering it's name in the stop command.
+
+```sh
+docker stop <container name>
+```
+
 ## To use API
 
 To test the API for the web application, you can use [Bruno](https://www.usebruno.com/) as a simple,
