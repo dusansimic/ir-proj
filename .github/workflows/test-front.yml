@@ -3,10 +3,12 @@ on:
     paths:
       - front/**
       - .github/workflows/test-front.yml
+      - "!front/Dockerfile"
   pull_request:
     paths:
       - front/**
       - .github/workflows/test-front.yml
+      - "!front/Dockerfile"
 
 jobs:
   lint:

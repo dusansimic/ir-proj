@@ -3,10 +3,12 @@ on:
     paths:
       - dalai/**.py
       - .github/workflows/test-dalai.yml
+      - "!dalai/Dockerfile"
   pull_request:
     paths:
       - dalai/**.py
       - .github/workflows/test.yml
+      - "!dalai/Dockerfile"
 
 jobs:
   format:
