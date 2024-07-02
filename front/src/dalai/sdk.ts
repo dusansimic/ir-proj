@@ -7,7 +7,7 @@ import {
 } from "./types";
 import { lastId } from "../utils";
 
-const backendHost = "http://localhost:5000";
+const backendHost = "http://127.0.0.1:5000";
 
 const createSession = async () => {
   const resp = await ky

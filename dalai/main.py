@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
 import json
 from session_store import SessionStore
 from util import Res
@@ -8,23 +9,27 @@ from util import Res
 from mock.llama_stuff import LlamaSession
 
 app = Flask(__name__)
+CORS(app)
 
 
 store = SessionStore()
 
 
 @app.get("/ping")
+@cross_origin()
 def ping():
     return "pong", 200
 
 
 @app.get("/create-session")
+@cross_origin()
 def create_session():
     res = {"id": store.new_session()}
     return json.dumps(res), 200
 
 
 @app.post("/set-paragraph")
+@cross_origin()
 def set_paragraph():
     id, paragraph = request.json["id"], request.json["paragraph"]
     res = Res()
@@ -39,6 +44,7 @@ def set_paragraph():
 
 
 @app.get("/start-session/<int:id>")
+@cross_origin()
 def start_session(id):
     res = Res()
     try:
@@ -50,6 +56,7 @@ def start_session(id):
 
 
 @app.get("/get-session/<int:id>")
+@cross_origin()
 def get_session(id):
     res = Res()
     try:
@@ -73,6 +80,7 @@ def get_session(id):
 
 
 @app.post("/grade-answer")
+@cross_origin()
 def grade_answer():
     id, qi, answer = (
         request.json["id"],
