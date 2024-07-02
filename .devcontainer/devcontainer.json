@@ -7,7 +7,8 @@
 				"ms-azuretools.vscode-docker",
 				"HashiCorp.HCL",
 				"ms-vscode.vscode-typescript-next",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"github.vscode-github-actions"
 			]
 		}
 	}
