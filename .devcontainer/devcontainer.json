@@ -8,7 +8,8 @@
 				"HashiCorp.HCL",
 				"ms-vscode.vscode-typescript-next",
 				"esbenp.prettier-vscode",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"yoavbls.pretty-ts-errors"
 			]
 		}
 	}

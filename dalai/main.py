@@ -3,9 +3,9 @@ import json
 from session_store import SessionStore
 from util import Res
 
-from llama_stuff import LlamaSession
+# from llama_stuff import LlamaSession
 
-# from mock.llama_stuff import LlamaSession
+from mock.llama_stuff import LlamaSession
 
 app = Flask(__name__)
 
@@ -31,7 +31,6 @@ def set_paragraph():
     try:
         session = store.get_session(id)
         session["model_session"] = LlamaSession(paragraph)
-        session["grades"] = None
     except ValueError:
         res.set("Session id doesn't exist in store!", 404)
     except:
@@ -63,7 +62,7 @@ def get_session(id):
         model = session["model_session"]
         obj["paragraph"] = model.paragraph
         obj["questions"] = model.questions
-        obj["grades"] = session["grades"]
+        obj["answers"] = model.answers
         res.set(json.dumps(obj), 200)
     except ValueError:
         res.set("Session id doesn't exist in store!", 404)

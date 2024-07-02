@@ -24,7 +24,7 @@ const ConditionalAvatar: FC<ConditionalAvatarProps> = ({ isBot }) => (
 
 const ChatBubble: FC<ChatBubbleProps> = ({ content, isBot }) => {
   return (
-    <Flex w={100} justify={isBot ? "start" : "end"} gap="md">
+    <Flex w={700} justify={isBot ? "start" : "end"} gap="md">
       {isBot ? <ConditionalAvatar isBot={isBot} /> : null}
       <Paper withBorder p="md">
         {content}
