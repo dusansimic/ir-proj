@@ -2,19 +2,36 @@
 // All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css";
 
-import { MantineProvider } from "@mantine/core";
+import { Container, MantineProvider, Stack } from "@mantine/core";
 import AppShell from "./components/AppShell";
 import ChatBubble from "./components/ChatBubble";
+import Prompt from "./components/Prompt";
+import { useState } from "react";
+
+type Message = {
+  isBot: boolean;
+  content: string;
+};
 
 export default function App() {
+  const [messages, setMessages] = useState<Message[]>([]);
+
   return (
     <MantineProvider>
       <AppShell>
-        <ChatBubble content="a" />
-        <ChatBubble content="b" />
-        <ChatBubble content="c" />
-        <ChatBubble content="d" />
-        <ChatBubble content="e" />
+        <Container size="sm">
+          <Stack gap="md">
+            {messages.map((message) => (
+              <ChatBubble content={message.content} isBot={message.isBot} />
+            ))}
+            <Prompt
+              onSubmit={({ content }) => {
+                console.log(content);
+                setMessages([...messages, { content, isBot: false }]);
+              }}
+            />
+          </Stack>
+        </Container>
       </AppShell>
     </MantineProvider>
   );
