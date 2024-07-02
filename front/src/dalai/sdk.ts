@@ -8,10 +8,11 @@ import {
 import { lastId } from "../utils";
 
 const backendHost = "http://127.0.0.1:5000";
+const desiredTimeout = 1000 * 60 * 5;
 
 const createSession = async () => {
   const resp = await ky
-    .get("create-session", { prefixUrl: backendHost })
+    .get("create-session", { prefixUrl: backendHost, timeout: desiredTimeout })
     .json<CreateSessionResponse>();
 
   return resp.id;
@@ -21,13 +22,17 @@ const setParagraph = async (json: { id: number; paragraph: string }) => {
   const resp = await ky.post("set-paragraph", {
     prefixUrl: backendHost,
     json,
+    timeout: desiredTimeout,
   });
 
   return [await resp.text(), resp.ok];
 };
 
 const initializeModel = async (id: number) => {
-  const resp = await ky.get(`start-session/${id}`, { prefixUrl: backendHost });
+  const resp = await ky.get(`start-session/${id}`, {
+    prefixUrl: backendHost,
+    timeout: desiredTimeout,
+  });
 
   return [await resp.text(), resp.ok];
 };
@@ -44,6 +49,7 @@ const answerQuestion = async (
       question_index: index,
       answer,
     },
+    timeout: desiredTimeout,
   });
 
   return [await resp.text(), resp.ok];
