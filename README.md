@@ -120,6 +120,10 @@ Postman-like API testing tool. The Bruno collection is located in the [bruno/](.
 - Dušan Simić <dusan.simic@dmi.uns.ac.rs>
 - Vladimir Kovačević <vladimir.kovacevic@dmi.uns.ac.rs>
 
+## Demo
+
+[![Watch the video](./assets/demo.png)](https://drive.google.com/file/d/1iPR7w2KdutQkFXDoR0YyUX-fUCGRB2_N/view?usp=share_link)
+
 ## License
 
 [BSD 2-clause](./LICENSE)
