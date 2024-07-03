@@ -1,4 +1,4 @@
-# AIlearner
+# AIearner
 
 > A humble learning assistant made with LLAMA.
 
