@@ -1,8 +1,8 @@
 # AIearner
 
-<center>
+<p align="center">
 <img alt="AIearner" src="./assets/aiearner.png" />
-</center>
+</p>
 
 > A humble learning assistant made with LLAMA.
 
