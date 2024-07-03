@@ -1,5 +1,9 @@
 # AIearner
 
+<center>
+![AIearner](./assets/aiearner.png)
+</center>
+
 > A humble learning assistant made with LLAMA.
 
 Project is created for an exam druing the university course Information Retrieval.
