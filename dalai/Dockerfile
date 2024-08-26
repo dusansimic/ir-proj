@@ -1,4 +1,4 @@
-FROM docker.io/continuumio/miniconda3:24.5.0-0
+FROM docker.io/continuumio/miniconda3:24.7.1-0
 
 COPY environment.yml /tmp/environment.yml
 RUN conda env create -f /tmp/environment.yml
